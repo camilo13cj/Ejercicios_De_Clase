@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Formulario de Contacto</string>
+    <string name="contact_title">Formulario de Contacto</string>
+    <string name="contact_subtitle">Completa los campos a continuación para enviarnos tu mensaje.</string>
+    <string name="name_label">Nombre completo</string>
+    <string name="name_placeholder">Juan Pérez</string>
+    <string name="email_label">Correo electrónico</string>
+    <string name="email_placeholder">ejemplo@dominio.com</string>
+    <string name="phone_label">Teléfono (opcional)</string>
+    <string name="phone_placeholder">+34 600 000 000</string>
+    <string name="message_label">Mensaje</string>
+    <string name="message_placeholder">Escribe al menos 10 caracteres...</string>
+    <string name="privacy_label">Acepto la política de privacidad</string>
+    <string name="privacy_view_link">Leer política</string>
+    <string name="submit_button">Enviar mensaje</string>
+    <string name="sending_button">Enviando...</string>
+    <string name="required_badge">Obligatorio</string>
+    <string name="optional_badge">Opcional</string>
+</resources>

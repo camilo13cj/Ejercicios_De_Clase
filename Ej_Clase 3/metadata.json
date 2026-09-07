@@ -1,0 +1,6 @@
+{
+  "name": "Formulario de Contacto",
+  "description": "Formulario de contacto con validaciones de nombre, correo electrónico, teléfono internacional, mensaje y aceptación de políticas de privacidad.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
