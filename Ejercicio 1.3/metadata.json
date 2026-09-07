@@ -1,0 +1,6 @@
+{
+  "name": "Features Section Component",
+  "description": "Componente modular de Características del Producto para Landing Pages de alta conversión con arquitectura BEM y CSS Grid responsivo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
