@@ -1,0 +1,6 @@
+{
+  "name": "Tarjeta Curso Tailwind CSS",
+  "description": "Tarjeta HTML y visual para cursos con modal de inscripción estudiantil y panel de administración.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
