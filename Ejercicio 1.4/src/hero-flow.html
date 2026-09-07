@@ -1,0 +1,306 @@
+<!-- ==========================================================================
+     SECCIÓN HERO - FLOWTASK LANDING PAGE (ALTA CONVERSIÓN SAAS)
+     ==========================================================================
+     - Metodología BEM rigurosa (.hero-flow__*)
+     - Semántica HTML5 nativa y accesible (ARIA, roles, labels descriptivos)
+     - Formulario inline optimizado para captura de leads (Beta Testing)
+     - Layout 50/50 desktop con stack vertical en móviles (<768px)
+     ========================================================================== -->
+
+<section 
+  class="hero-flow" 
+  aria-labelledby="hero-title"
+  role="region"
+>
+  <div class="hero-flow__container">
+    <div class="hero-flow__grid">
+      
+      <!-- ====================================================================
+           COLUMNA IZQUIERDA: CONTENIDO PERSUASIVO, FORMULARIO Y TRUST BADGES
+           ==================================================================== -->
+      <div class="hero-flow__content">
+        
+        <!-- Indicador de Acceso Beta -->
+        <div class="hero-flow__badge" role="status">
+          <span class="hero-flow__badge-dot" aria-hidden="true"></span>
+          <span class="hero-flow__badge-text">Acceso Beta Q3 • Cupos Limitados para Equipos</span>
+        </div>
+
+        <!-- Headline Principal de Alto Impacto (H1) -->
+        <h1 id="hero-title" class="hero-flow__title">
+          Sincroniza a tus ingenieros. 
+          <span class="hero-flow__title-highlight">Acelera tus sprints sin fricción.</span>
+        </h1>
+
+        <!-- Subheadline Explicativo de Propuesta de Valor (P) -->
+        <p class="hero-flow__description">
+          FlowTask es la plataforma de gestión ágil que traduce automáticamente los commits y pull requests de Git en tableros de avance y métricas de ciclo en tiempo real. Dile adiós a la actualización manual de tickets.
+        </p>
+
+        <!-- Formulario Inline de Captura Optimizado -->
+        <div class="hero-flow__form-wrapper">
+          <form 
+            id="hero-beta-form" 
+            class="hero-flow__form" 
+            action="#" 
+            method="POST"
+            novalidate
+            aria-label="Formulario de registro prioritario para la Beta"
+          >
+            <!-- Etiqueta accesible para lectores de pantalla -->
+            <label for="hero-user-email" class="hero-flow__label--sr-only">
+              Correo electrónico corporativo o personal
+            </label>
+
+            <!-- Grupo de Entrada con Ícono -->
+            <div class="hero-flow__input-group">
+              <span class="hero-flow__input-icon" aria-hidden="true">
+                <!-- SVG Ícono de Correo -->
+                <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                  <rect width="20" height="16" x="2" y="4" rx="2"/>
+                  <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/>
+                </svg>
+              </span>
+
+              <input 
+                type="email" 
+                id="hero-user-email" 
+                name="email" 
+                class="hero-flow__input" 
+                placeholder="Ingresa tu correo de trabajo..." 
+                required 
+                autocomplete="email"
+                aria-required="true"
+                aria-describedby="hero-form-help hero-form-feedback"
+              />
+            </div>
+
+            <!-- Botón de Llamada a la Acción (CTA) -->
+            <button 
+              type="submit" 
+              class="hero-flow__cta-btn" 
+              id="hero-submit-btn"
+              aria-label="Solicitar acceso prioritario a la beta de FlowTask"
+            >
+              <span>Acceso Prioritario Beta</span>
+              <span class="hero-flow__button-icon" aria-hidden="true">
+                <!-- SVG Flecha de Acción -->
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                  <path d="M5 12h14"/>
+                  <path d="m12 5 7 7-7 7"/>
+                </svg>
+              </span>
+            </button>
+          </form>
+
+          <!-- Microcopy de Confianza y Privacidad -->
+          <div id="hero-form-help" class="hero-flow__microcopy">
+            <span class="hero-flow__microcopy-item">
+              <svg class="hero-flow__microcopy-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+              Sin tarjeta de crédito requerida
+            </span>
+            <span class="hero-flow__microcopy-item">
+              <svg class="hero-flow__microcopy-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <circle cx="12" cy="12" r="10"/>
+                <path d="m9 12 2 2 4-4"/>
+              </svg>
+              Configuración en 3 minutos con GitHub/GitLab
+            </span>
+          </div>
+
+          <!-- Mensaje Dinámico de Estado (Accesibilidad con aria-live) -->
+          <div 
+            id="hero-form-feedback" 
+            class="hero-flow__status-message" 
+            role="status" 
+            aria-live="polite"
+          ></div>
+        </div>
+
+        <!-- ==================================================================
+             SECCIÓN DE TRUST BADGES (EMPRESAS COLABORADORAS FICTICIAS)
+             ================================================================== -->
+        <div class="hero-flow__trust" role="region" aria-label="Empresas asociadas">
+          <p class="hero-flow__trust-label">Confiado por líderes técnicos y PMs en equipos como:</p>
+          <ul class="hero-flow__trust-list" role="list">
+            <li class="hero-flow__trust-item" role="listitem">
+              <span class="hero-flow__trust-brand">
+                <svg class="hero-flow__trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <polygon points="12 2 2 7 12 12 22 7 12 2"/>
+                  <polyline points="2 17 12 22 22 17"/>
+                  <polyline points="2 12 12 17 22 12"/>
+                </svg>
+                NovaStack
+              </span>
+            </li>
+            <li class="hero-flow__trust-item" role="listitem">
+              <span class="hero-flow__trust-brand">
+                <svg class="hero-flow__trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect width="18" height="18" x="3" y="3" rx="2"/>
+                  <path d="m9 8 6 4-6 4Z"/>
+                </svg>
+                DevScale
+              </span>
+            </li>
+            <li class="hero-flow__trust-item" role="listitem">
+              <span class="hero-flow__trust-brand">
+                <svg class="hero-flow__trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/>
+                </svg>
+                CloudPulse
+              </span>
+            </li>
+            <li class="hero-flow__trust-item" role="listitem">
+              <span class="hero-flow__trust-brand">
+                <svg class="hero-flow__trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="m13 2-2 2.5h3L11 9"/>
+                  <circle cx="12" cy="14" r="8"/>
+                </svg>
+                Sprintio
+              </span>
+            </li>
+            <li class="hero-flow__trust-item" role="listitem">
+              <span class="hero-flow__trust-brand">
+                <svg class="hero-flow__trust-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
+                </svg>
+                NexaByte
+              </span>
+            </li>
+          </ul>
+        </div>
+
+      </div>
+
+      <!-- ====================================================================
+           COLUMNA DERECHA: CONTENEDOR DE MOCKUP ILUSTRATIVO DE ALTA CONVERSIÓN
+           ==================================================================== -->
+      <div class="hero-flow__media">
+        <figure class="hero-flow__mockup-card" role="group" aria-label="Mockup de la interfaz de gestión de sprints en FlowTask">
+          
+          <!-- Encabezado de la Ventana del Mockup -->
+          <div class="hero-flow__mockup-header">
+            <div class="hero-flow__mockup-dots" aria-hidden="true">
+              <span class="hero-flow__mockup-dot"></span>
+              <span class="hero-flow__mockup-dot"></span>
+              <span class="hero-flow__mockup-dot"></span>
+            </div>
+            <div class="hero-flow__mockup-url">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <rect width="18" height="11" x="3" y="11" rx="2" ry="2"/>
+                <path d="M7 11V7a5 5 0 0 1 10 0v4"/>
+              </svg>
+              <span>app.flowtask.io/sprint-42/board</span>
+            </div>
+            <span class="hero-flow__mockup-badge">EN VIVO</span>
+          </div>
+
+          <!-- Cuerpo y Tablero Interactivo del Mockup -->
+          <div class="hero-flow__mockup-body">
+            
+            <!-- Barra de Información de Proyecto & Sprint -->
+            <div class="hero-flow__mockup-toolbar">
+              <div class="hero-flow__mockup-project">
+                <div class="hero-flow__mockup-project-icon" aria-hidden="true">FT</div>
+                <div class="hero-flow__mockup-project-info">
+                  <span class="hero-flow__mockup-project-name">Plataforma Core v2.4</span>
+                  <span class="hero-flow__mockup-project-sprint">Sprint Activo #42 • 8 Días Restantes</span>
+                </div>
+              </div>
+              <div class="hero-flow__mockup-metrics">
+                <div class="hero-flow__mockup-metric-pill hero-flow__mockup-metric-pill--primary">
+                  <span>Velocidad: 48 pts</span>
+                </div>
+                <div class="hero-flow__mockup-metric-pill hero-flow__mockup-metric-pill--secondary">
+                  <span>✓ 94% a tiempo</span>
+                </div>
+              </div>
+            </div>
+
+            <!-- Columnas del Tablero Kanban -->
+            <div class="hero-flow__mockup-board" role="region" aria-label="Columnas del tablero ágil">
+              
+              <!-- Columna 1: Por Hacer -->
+              <div class="hero-flow__mockup-column">
+                <div class="hero-flow__mockup-col-header">
+                  <span>Por Hacer</span>
+                  <span class="hero-flow__mockup-col-count">3</span>
+                </div>
+                <div class="hero-flow__mockup-task">
+                  <span class="hero-flow__mockup-task-tag hero-flow__mockup-task-tag--api">API Auth</span>
+                  <div class="hero-flow__mockup-task-title">Migrar endpoint OAuth 2.0 PKCE</div>
+                  <div class="hero-flow__mockup-task-footer">
+                    <span>#FT-309</span>
+                    <div class="hero-flow__mockup-avatar-group">
+                      <span class="hero-flow__mockup-avatar">CR</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Columna 2: En Progreso -->
+              <div class="hero-flow__mockup-column">
+                <div class="hero-flow__mockup-col-header">
+                  <span>En Progreso</span>
+                  <span class="hero-flow__mockup-col-count">2</span>
+                </div>
+                <div class="hero-flow__mockup-task">
+                  <span class="hero-flow__mockup-task-tag hero-flow__mockup-task-tag--dev">Frontend</span>
+                  <div class="hero-flow__mockup-task-title">Optimizar Web Vitals en Dashboard</div>
+                  <div class="hero-flow__mockup-task-footer">
+                    <span>#FT-284</span>
+                    <div class="hero-flow__mockup-avatar-group">
+                      <span class="hero-flow__mockup-avatar">AG</span>
+                      <span class="hero-flow__mockup-avatar">ML</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Columna 3: Completado -->
+              <div class="hero-flow__mockup-column">
+                <div class="hero-flow__mockup-col-header">
+                  <span>Listo / Merged</span>
+                  <span class="hero-flow__mockup-col-count">5</span>
+                </div>
+                <div class="hero-flow__mockup-task">
+                  <span class="hero-flow__mockup-task-tag hero-flow__mockup-task-tag--qa">CI/CD</span>
+                  <div class="hero-flow__mockup-task-title">Pipeline de testing automatizado</div>
+                  <div class="hero-flow__mockup-task-footer">
+                    <span>#FT-271</span>
+                    <div class="hero-flow__mockup-avatar-group">
+                      <span class="hero-flow__mockup-avatar">EK</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+            </div>
+
+          </div>
+
+          <!-- Notificación Flotante Decorativa (Sincronización Git en Tiempo Real) -->
+          <aside class="hero-flow__mockup-floating-card" aria-hidden="true">
+            <div class="hero-flow__floating-icon-wrap">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                <line x1="6" x2="6" y1="3" y2="15"/>
+                <circle cx="18" cy="6" r="3"/>
+                <circle cx="6" cy="18" r="3"/>
+                <path d="M18 9a9 9 0 0 1-9 9"/>
+              </svg>
+            </div>
+            <div class="hero-flow__floating-info">
+              <span class="hero-flow__floating-title">PR #142 Merged & Cerrado</span>
+              <span class="hero-flow__floating-subtitle">Ticket #FT-271 actualizado automáticamente</span>
+            </div>
+          </aside>
+
+        </figure>
+      </div>
+
+    </div>
+  </div>
+</section>

@@ -1,0 +1,785 @@
+/**
+ * ==========================================================================
+ * ESTILOS DE LA SECCIÓN HERO - FLOWTASK (BEM METHODOLOGY)
+ * ==========================================================================
+ * Paleta de colores oficial:
+ * - Primario: #3B82F6 (Azul tecnológico para acciones principales)
+ * - Secundario: #10B981 (Verde esmeralda para éxito y conversión)
+ * - Neutro: #F3F4F6 (Gris ultra-claro para fondos y superficies)
+ *
+ * Arquitectura:
+ * - Metodología BEM rigurosa (.block__element--modifier)
+ * - Diseño mobile-first con media queries para apilamiento (<768px)
+ * - Layout de dos columnas balanceado 50/50 en desktop
+ * ==========================================================================
+ */
+
+/* --------------------------------------------------------------------------
+   1. VARIABLES CSS (CUSTOM PROPERTIES)
+   -------------------------------------------------------------------------- */
+:root {
+  /* Paleta Corporativa Requerida */
+  --hero-color-primary: #3B82F6;
+  --hero-color-primary-hover: #2563EB;
+  --hero-color-primary-light: rgba(59, 130, 246, 0.12);
+  --hero-color-secondary: #10B981;
+  --hero-color-secondary-hover: #059669;
+  --hero-color-secondary-light: rgba(16, 185, 129, 0.15);
+  --hero-color-neutral: #F3F4F6;
+
+  /* Colores de Apoyo y Contraste (Accesibilidad WCAG AA) */
+  --hero-color-bg: #FFFFFF;
+  --hero-color-surface: #F8FAFC;
+  --hero-color-text-title: #0F172A;
+  --hero-color-text-body: #475569;
+  --hero-color-text-muted: #64748B;
+  --hero-color-border: #E2E8F0;
+  --hero-color-border-focus: #3B82F6;
+  --hero-color-error: #EF4444;
+
+  /* Tipografía y Espaciado */
+  --hero-font-family: 'Plus Jakarta Sans', system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --hero-radius-sm: 8px;
+  --hero-radius-md: 12px;
+  --hero-radius-lg: 20px;
+  --hero-shadow-sm: 0 1px 3px rgba(0, 0, 0, 0.08), 0 1px 2px rgba(0, 0, 0, 0.04);
+  --hero-shadow-md: 0 4px 6px -1px rgba(15, 23, 42, 0.07), 0 2px 4px -2px rgba(15, 23, 42, 0.05);
+  --hero-shadow-lg: 0 20px 25px -5px rgba(15, 23, 42, 0.08), 0 8px 10px -6px rgba(15, 23, 42, 0.04);
+  --hero-transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+/* --------------------------------------------------------------------------
+   2. BLOQUE PRINCIPAL: .hero-flow
+   -------------------------------------------------------------------------- */
+.hero-flow {
+  position: relative;
+  width: 100%;
+  background-color: var(--hero-color-bg);
+  color: var(--hero-color-text-body);
+  font-family: var(--hero-font-family);
+  padding: 4.5rem 1.5rem 4rem;
+  overflow: hidden;
+  box-sizing: border-box;
+}
+
+/* Fondo decorativo sutil para agregar profundidad técnica sin ruido visual */
+.hero-flow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  max-width: 1400px;
+  height: 100%;
+  background: radial-gradient(circle at 85% 15%, rgba(59, 130, 246, 0.07) 0%, transparent 60%),
+              radial-gradient(circle at 15% 45%, rgba(16, 185, 129, 0.05) 0%, transparent 55%);
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* --------------------------------------------------------------------------
+   3. CONTENEDOR Y LAYOUT GRID (50/50 DESKTOP)
+   -------------------------------------------------------------------------- */
+.hero-flow__container {
+  position: relative;
+  z-index: 1;
+  max-width: 1240px;
+  margin-left: auto;
+  margin-right: auto;
+  width: 100%;
+}
+
+.hero-flow__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr; /* Exactamente 50% y 50% en desktop */
+  align-items: center;
+  gap: 3.5rem;
+}
+
+/* --------------------------------------------------------------------------
+   4. COLUMNA IZQUIERDA: CONTENIDO PERSUASIVO Y FORMULARIO
+   -------------------------------------------------------------------------- */
+.hero-flow__content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: left;
+}
+
+/* Tag / Badge de Beta Testing */
+.hero-flow__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  align-self: flex-start;
+  padding: 0.375rem 0.875rem;
+  background-color: var(--hero-color-neutral);
+  border: 1px solid var(--hero-color-border);
+  border-radius: 9999px;
+  font-size: 0.8125rem;
+  font-weight: 600;
+  color: var(--hero-color-text-title);
+  margin-bottom: 1.5rem;
+}
+
+.hero-flow__badge-dot {
+  width: 8px;
+  height: 8px;
+  background-color: var(--hero-color-secondary);
+  border-radius: 50%;
+  display: inline-block;
+  box-shadow: 0 0 0 3px var(--hero-color-secondary-light);
+  animation: pulse-dot 2s infinite;
+}
+
+@keyframes pulse-dot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+  50% {
+    transform: scale(1.2);
+    opacity: 0.7;
+  }
+}
+
+/* Headline Principal (H1) */
+.hero-flow__title {
+  font-size: 3rem;
+  line-height: 1.15;
+  font-weight: 800;
+  color: var(--hero-color-text-title);
+  letter-spacing: -0.03em;
+  margin: 0 0 1.25rem 0;
+}
+
+.hero-flow__title-highlight {
+  color: var(--hero-color-primary);
+  display: inline-block;
+}
+
+/* Subheadline Explicativo (P) */
+.hero-flow__description {
+  font-size: 1.125rem;
+  line-height: 1.65;
+  color: var(--hero-color-text-body);
+  margin: 0 0 2rem 0;
+  max-width: 540px;
+}
+
+/* --------------------------------------------------------------------------
+   5. FORMULARIO INLINE DE CAPTURA OPTIMIZADO (EMAIL + CTA)
+   -------------------------------------------------------------------------- */
+.hero-flow__form-wrapper {
+  margin-bottom: 2.5rem;
+}
+
+.hero-flow__form {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  gap: 0.75rem;
+  background-color: var(--hero-color-bg);
+  padding: 0.375rem;
+  border-radius: var(--hero-radius-md);
+  border: 1px solid var(--hero-color-border);
+  box-shadow: var(--hero-shadow-md);
+  max-width: 530px;
+  transition: var(--hero-transition);
+}
+
+.hero-flow__form:focus-within {
+  border-color: var(--hero-color-primary);
+  box-shadow: 0 0 0 4px var(--hero-color-primary-light), var(--hero-shadow-md);
+}
+
+/* Label oculto accesible para lectores de pantalla */
+.hero-flow__label--sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+/* Input group */
+.hero-flow__input-group {
+  position: relative;
+  display: flex;
+  align-items: center;
+  flex: 1;
+  min-width: 0;
+}
+
+.hero-flow__input-icon {
+  position: absolute;
+  left: 1rem;
+  color: var(--hero-color-text-muted);
+  pointer-events: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-flow__input {
+  width: 100%;
+  height: 3.125rem;
+  padding: 0.5rem 1rem 0.5rem 2.85rem;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  color: var(--hero-color-text-title);
+  background-color: transparent;
+  border: none;
+  outline: none;
+  box-sizing: border-box;
+}
+
+.hero-flow__input::placeholder {
+  color: #94A3B8;
+}
+
+/* Botón de Llamada a la Acción (CTA) */
+.hero-flow__cta-btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  height: 3.125rem;
+  padding: 0 1.5rem;
+  background-color: var(--hero-color-primary);
+  color: #FFFFFF;
+  font-family: inherit;
+  font-size: 0.9375rem;
+  font-weight: 700;
+  white-space: nowrap;
+  border: none;
+  border-radius: var(--hero-radius-sm);
+  cursor: pointer;
+  transition: var(--hero-transition);
+  box-shadow: 0 2px 4px rgba(59, 130, 246, 0.25);
+  flex-shrink: 0;
+}
+
+.hero-flow__cta-btn:hover {
+  background-color: var(--hero-color-primary-hover);
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(59, 130, 246, 0.35);
+}
+
+.hero-flow__cta-btn:active {
+  transform: translateY(0);
+  box-shadow: 0 1px 3px rgba(59, 130, 246, 0.2);
+}
+
+.hero-flow__cta-btn:focus-visible {
+  outline: 2px solid var(--hero-color-primary-hover);
+  outline-offset: 2px;
+}
+
+/* Modificador del botón en estado secundario / verde de éxito */
+.hero-flow__cta-btn--secondary {
+  background-color: var(--hero-color-secondary);
+  box-shadow: 0 2px 4px rgba(16, 185, 129, 0.25);
+}
+
+.hero-flow__cta-btn--secondary:hover {
+  background-color: var(--hero-color-secondary-hover);
+  box-shadow: 0 4px 10px rgba(16, 185, 129, 0.35);
+}
+
+/* Microcopy y validación accesible */
+.hero-flow__microcopy {
+  display: flex;
+  align-items: center;
+  gap: 1.25rem;
+  margin-top: 0.625rem;
+  font-size: 0.8125rem;
+  color: var(--hero-color-text-muted);
+}
+
+.hero-flow__microcopy-item {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.hero-flow__microcopy-icon {
+  color: var(--hero-color-secondary);
+}
+
+.hero-flow__status-message {
+  font-size: 0.875rem;
+  margin-top: 0.75rem;
+  display: none;
+}
+
+.hero-flow__status-message--visible {
+  display: block;
+}
+
+.hero-flow__status-message--success {
+  color: var(--hero-color-secondary);
+  font-weight: 600;
+}
+
+.hero-flow__status-message--error {
+  color: var(--hero-color-error);
+  font-weight: 600;
+}
+
+/* --------------------------------------------------------------------------
+   6. SECCIÓN DE TRUST BADGES (EMPRESAS COLABORADORAS)
+   -------------------------------------------------------------------------- */
+.hero-flow__trust {
+  padding-top: 1.5rem;
+  border-top: 1px solid var(--hero-color-border);
+}
+
+.hero-flow__trust-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--hero-color-text-muted);
+  margin-bottom: 1rem;
+}
+
+.hero-flow__trust-list {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.hero-flow__trust-item {
+  display: flex;
+  align-items: center;
+}
+
+.hero-flow__trust-brand {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  color: #64748B;
+  font-size: 0.875rem;
+  font-weight: 700;
+  letter-spacing: -0.01em;
+  opacity: 0.85;
+  transition: opacity 0.2s ease, color 0.2s ease;
+}
+
+.hero-flow__trust-brand:hover {
+  opacity: 1;
+  color: var(--hero-color-text-title);
+}
+
+.hero-flow__trust-icon {
+  width: 18px;
+  height: 18px;
+}
+
+/* --------------------------------------------------------------------------
+   7. COLUMNA DERECHA: MOCKUP ILUSTRATIVO DE ALTA DEFINICIÓN
+   -------------------------------------------------------------------------- */
+.hero-flow__media {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+.hero-flow__mockup-card {
+  position: relative;
+  width: 100%;
+  max-width: 580px;
+  background-color: var(--hero-color-bg);
+  border: 1px solid var(--hero-color-border);
+  border-radius: var(--hero-radius-lg);
+  box-shadow: var(--hero-shadow-lg);
+  overflow: hidden;
+  transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.hero-flow__mockup-card:hover {
+  transform: translateY(-4px);
+}
+
+/* Barra superior tipo navegador SaaS */
+.hero-flow__mockup-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.875rem 1.25rem;
+  background-color: var(--hero-color-neutral);
+  border-bottom: 1px solid var(--hero-color-border);
+}
+
+.hero-flow__mockup-dots {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.hero-flow__mockup-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background-color: #CBD5E1;
+}
+
+.hero-flow__mockup-dot:nth-child(1) { background-color: #FDA4AF; }
+.hero-flow__mockup-dot:nth-child(2) { background-color: #FDE047; }
+.hero-flow__mockup-dot:nth-child(3) { background-color: #86EFAC; }
+
+.hero-flow__mockup-url {
+  font-size: 0.6875rem;
+  font-weight: 500;
+  color: var(--hero-color-text-muted);
+  background-color: #FFFFFF;
+  padding: 0.25rem 0.875rem;
+  border-radius: 6px;
+  border: 1px solid var(--hero-color-border);
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+}
+
+.hero-flow__mockup-badge {
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  background-color: var(--hero-color-secondary);
+  padding: 0.15rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Contenido interno del Mockup (Dashboard Interactivo Representativo) */
+.hero-flow__mockup-body {
+  padding: 1.25rem;
+  background-color: #F8FAFC;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Mockup Header interior */
+.hero-flow__mockup-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid var(--hero-color-border);
+}
+
+.hero-flow__mockup-project {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
+
+.hero-flow__mockup-project-icon {
+  width: 28px;
+  height: 28px;
+  border-radius: 6px;
+  background-color: var(--hero-color-primary);
+  color: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 800;
+}
+
+.hero-flow__mockup-project-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-flow__mockup-project-name {
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: var(--hero-color-text-title);
+  line-height: 1.2;
+}
+
+.hero-flow__mockup-project-sprint {
+  font-size: 0.6875rem;
+  color: var(--hero-color-text-muted);
+}
+
+/* Indicador de métricas del sprint */
+.hero-flow__mockup-metrics {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.hero-flow__mockup-metric-pill {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.6rem;
+  border-radius: 6px;
+  font-size: 0.6875rem;
+  font-weight: 600;
+}
+
+.hero-flow__mockup-metric-pill--primary {
+  background-color: rgba(59, 130, 246, 0.1);
+  color: var(--hero-color-primary);
+}
+
+.hero-flow__mockup-metric-pill--secondary {
+  background-color: rgba(16, 185, 129, 0.12);
+  color: var(--hero-color-secondary);
+}
+
+/* Tablero Kanban interno del Mockup */
+.hero-flow__mockup-board {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 0.75rem;
+}
+
+.hero-flow__mockup-column {
+  background-color: var(--hero-color-neutral);
+  border-radius: var(--hero-radius-sm);
+  padding: 0.75rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.hero-flow__mockup-col-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.6875rem;
+  font-weight: 700;
+  color: var(--hero-color-text-muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.25rem;
+}
+
+.hero-flow__mockup-col-count {
+  background-color: #E2E8F0;
+  padding: 0.1rem 0.35rem;
+  border-radius: 4px;
+  font-size: 0.625rem;
+}
+
+/* Tarjetas de tareas dentro del Kanban */
+.hero-flow__mockup-task {
+  background-color: #FFFFFF;
+  border: 1px solid #E2E8F0;
+  border-radius: 6px;
+  padding: 0.625rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.04);
+}
+
+.hero-flow__mockup-task-tag {
+  display: inline-block;
+  font-size: 0.5625rem;
+  font-weight: 700;
+  padding: 0.15rem 0.35rem;
+  border-radius: 4px;
+  margin-bottom: 0.35rem;
+  text-transform: uppercase;
+}
+
+.hero-flow__mockup-task-tag--dev {
+  background-color: #EFF6FF;
+  color: #2563EB;
+}
+
+.hero-flow__mockup-task-tag--qa {
+  background-color: #ECFDF5;
+  color: #059669;
+}
+
+.hero-flow__mockup-task-tag--api {
+  background-color: #FEF3C7;
+  color: #D97706;
+}
+
+.hero-flow__mockup-task-title {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: var(--hero-color-text-title);
+  line-height: 1.3;
+  margin-bottom: 0.5rem;
+}
+
+.hero-flow__mockup-task-footer {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 0.625rem;
+  color: var(--hero-color-text-muted);
+}
+
+.hero-flow__mockup-avatar-group {
+  display: flex;
+  align-items: center;
+}
+
+.hero-flow__mockup-avatar {
+  width: 18px;
+  height: 18px;
+  border-radius: 50%;
+  border: 1.5px solid #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.5rem;
+  font-weight: 700;
+  color: #FFFFFF;
+  background-color: #64748B;
+}
+
+.hero-flow__mockup-avatar:nth-child(1) { background-color: #3B82F6; }
+.hero-flow__mockup-avatar:nth-child(2) { background-color: #10B981; margin-left: -5px; }
+
+/* Flotante interactivo decorativo (Notificación en vivo de Git commit) */
+.hero-flow__mockup-floating-card {
+  position: absolute;
+  bottom: -0.875rem;
+  right: -0.75rem;
+  background-color: #FFFFFF;
+  border: 1px solid var(--hero-color-border);
+  border-radius: var(--hero-radius-md);
+  padding: 0.625rem 0.875rem;
+  box-shadow: var(--hero-shadow-lg);
+  display: flex;
+  align-items: center;
+  gap: 0.625rem;
+  z-index: 2;
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-5px); }
+}
+
+.hero-flow__floating-icon-wrap {
+  width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background-color: var(--hero-color-secondary-light);
+  color: var(--hero-color-secondary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.hero-flow__floating-info {
+  display: flex;
+  flex-direction: column;
+}
+
+.hero-flow__floating-title {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--hero-color-text-title);
+}
+
+.hero-flow__floating-subtitle {
+  font-size: 0.625rem;
+  color: var(--hero-color-text-muted);
+}
+
+/* --------------------------------------------------------------------------
+   8. COMPORTAMIENTO RESPONSIVE (MEDIA QUERIES)
+   --------------------------------------------------------------------------
+   Requisito Obligatorio:
+   - Apilamiento vertical (stack vertical) automático para móviles (<768px).
+   -------------------------------------------------------------------------- */
+@media screen and (max-width: 767px) {
+  .hero-flow {
+    padding: 2.75rem 1rem 3rem;
+  }
+
+  /* El layout de dos columnas pasa a apilamiento vertical */
+  .hero-flow__grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  .hero-flow__content {
+    text-align: left;
+  }
+
+  /* Ajuste de escala tipográfica para pantallas reducidas */
+  .hero-flow__title {
+    font-size: 2rem;
+    line-height: 1.2;
+    margin-bottom: 1rem;
+  }
+
+  .hero-flow__description {
+    font-size: 1rem;
+    line-height: 1.6;
+    margin-bottom: 1.5rem;
+  }
+
+  /* Formulario: El botón y el input se apilan ordenadamente en móvil */
+  .hero-flow__form {
+    flex-direction: column;
+    padding: 0.5rem;
+    max-width: 100%;
+  }
+
+  .hero-flow__input {
+    height: 3rem;
+  }
+
+  .hero-flow__cta-btn {
+    width: 100%;
+    height: 3rem;
+  }
+
+  .hero-flow__microcopy {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+
+  /* Trust badges en móvil con espaciado optimizado */
+  .hero-flow__trust-list {
+    gap: 1.25rem;
+    justify-content: flex-start;
+  }
+
+  /* Ocultar elementos flotantes que desborden en pantallas pequeñas */
+  .hero-flow__mockup-floating-card {
+    display: none;
+  }
+
+  .hero-flow__mockup-board {
+    grid-template-columns: 1fr;
+  }
+
+  .hero-flow__mockup-column:nth-child(3) {
+    display: none; /* Mantener limpia la visualización en móvil */
+  }
+}
+
+/* Optimización para tablets intermedias (768px - 1024px) */
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+  .hero-flow__title {
+    font-size: 2.375rem;
+  }
+
+  .hero-flow__grid {
+    gap: 2rem;
+  }
+}
