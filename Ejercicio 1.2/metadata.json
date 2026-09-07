@@ -1,0 +1,6 @@
+{
+  "name": "Formulario de Registro y Captura de Leads",
+  "description": "Componente semántico y accesible de captura de leads bajo metodología BEM y CSS3 responsivo.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
