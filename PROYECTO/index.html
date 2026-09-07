@@ -1,0 +1,650 @@
+<!DOCTYPE html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PetMatch | Adopción Inteligente y Bienestar Animal con IA</title>
+    <meta name="description" content="PetMatch conecta familias y mascotas compatibles mediante algoritmos de afinidad por inteligencia artificial y pasaporte preventivo de salud." />
+    <meta property="og:title" content="PetMatch | Adopción Inteligente y Bienestar Animal con IA" />
+    <meta property="og:description" content="Descubre a tu compañero de vida ideal sin adopciones fallidas. Algoritmo de afinidad real, bienestar preventivo y gestión para refugios." />
+    <meta property="og:type" content="website" />
+    <meta name="twitter:card" content="summary_large_image" />
+
+    <!-- Google Fonts: Tipografía Inter según especificación de diseño -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet" />
+
+    <!-- Estilos de la landing page -->
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body>
+    <!-- Accesibilidad WCAG 2.1 AA: Enlace directo al contenido principal para lectores de pantalla -->
+    <a href="#main-content" class="skip-link">Saltar al contenido principal</a>
+
+    <!-- ====================================================================
+         HEADER & NAVEGACIÓN GLASSMORPHISM
+         Decisión BEM: Bloque .header y bloque .nav con modificadores
+         ==================================================================== -->
+    <header class="header" id="header" role="banner">
+      <div class="container">
+        <nav class="nav" aria-label="Navegación principal">
+          <!-- Logotipo y Marca -->
+          <a href="#" class="nav__brand" aria-label="PetMatch Inicio">
+            <svg class="nav__logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.707.807 1.545 1.5 1.5 1.5-.1 3.5-1.5 4-2.5.342-.685 1-1.328 1-2.828z"></path>
+              <path d="M14 5.172C14 3.782 15.577 2.679 17.5 3c2.823.47 4.113 6.006 4 7-.08.707-.807 1.545-1.5 1.5-1.5-.1-3.5-1.5-4-2.5-.342-.685-1-1.328-1-2.828z"></path>
+              <path d="M7 14c-1.5 0-3-1-3-3 0-2 1.5-3 3-3s3 1 3 3c0 2-1.5 3-3 3z"></path>
+              <path d="M17 14c-1.5 0-3-1-3-3 0-2 1.5-3 3-3s3 1 3 3c0 2-1.5 3-3 3z"></path>
+              <path d="M12 21c4.5 0 8-3.5 8-8 0-3-2-5-4-5-1.5 0-3 1-4 2.5C11 9 9.5 8 8 8c-2 0-4 2-4 5 0 4.5 3.5 8 8 8z"></path>
+            </svg>
+            <span>Pet<span class="nav__logo-accent">Match</span></span>
+          </a>
+
+          <!-- Enlaces de navegación desktop -->
+          <ul class="nav__menu" role="list">
+            <li><a href="#beneficios" class="nav__link">Beneficios IA</a></li>
+            <li><a href="#como-funciona" class="nav__link">Cómo Funciona</a></li>
+            <li><a href="#deseo" class="nav__link">Pase Fundador</a></li>
+          </ul>
+
+          <!-- CTA de cabecera -->
+          <div style="display: flex; align-items: center; gap: 12px;">
+            <a href="#registro" class="btn btn--primary btn--sm" id="header-cta-btn">Unirme al Prelaunch</a>
+
+            <!-- Botón Hamburguesa para vista móvil -->
+            <button 
+              type="button" 
+              class="nav__toggle" 
+              id="nav-toggle-btn"
+              aria-label="Abrir menú de navegación" 
+              aria-expanded="false" 
+              aria-controls="mobile-drawer"
+            >
+              <span class="nav__toggle-bar" aria-hidden="true"></span>
+              <span class="nav__toggle-bar" aria-hidden="true"></span>
+              <span class="nav__toggle-bar" aria-hidden="true"></span>
+            </button>
+          </div>
+        </nav>
+      </div>
+    </header>
+
+    <!-- Menú lateral móvil (Drawer) -->
+    <div class="mobile-drawer__overlay" id="mobile-overlay" aria-hidden="true"></div>
+    <aside class="mobile-drawer" id="mobile-drawer" aria-label="Menú móvil">
+      <ul class="mobile-drawer__list" role="list">
+        <li><a href="#beneficios" class="mobile-drawer__link">Beneficios IA</a></li>
+        <li><a href="#como-funciona" class="mobile-drawer__link">Cómo Funciona</a></li>
+        <li><a href="#deseo" class="mobile-drawer__link">Pase Fundador</a></li>
+      </ul>
+      <a href="#registro" class="btn btn--primary btn--full mobile-drawer__link">Reservar Acceso Exclusivo</a>
+    </aside>
+
+    <!-- ====================================================================
+         CONTENIDO PRINCIPAL
+         ==================================================================== -->
+    <main id="main-content">
+      <!-- ------------------------------------------------------------------
+           HERO SECTION (AIDA: ATENCIÓN)
+           Decisión BEM: .hero, .hero__layout, .hero__mockup-wrapper, etc.
+           ------------------------------------------------------------------ -->
+      <section class="section hero" id="hero" aria-labelledby="hero-title">
+        <div class="container">
+          <div class="hero__layout">
+            <!-- Columna de Texto Persuasivo -->
+            <div class="hero__content">
+              <div class="hero__pill">
+                <span class="hero__pill-dot" aria-hidden="true"></span>
+                <span class="hero__pill-text">Prelanzamiento Exclusivo • Cupos Limitados</span>
+              </div>
+
+              <!-- H1 persuasivo con foco en beneficios y reducción de fricción -->
+              <h1 class="hero__title" id="hero-title">
+                ¿Y si tu próximo compañero de vida ya estuviera <span class="hero__title--highlight">buscándote?</span>
+              </h1>
+
+              <!-- Subheadline descriptivo AIDA -->
+              <p class="hero__description">
+                PetMatch une a adoptantes, refugios y veterinarios mediante el primer algoritmo genético de afinidad basado en IA. Conectamos estilos de vida reales con personalidades compatibles para erradicar las adopciones fallidas.
+              </p>
+
+              <!-- CTA principal con smooth scroll hacia el formulario -->
+              <div class="hero__cta-group">
+                <a href="#registro" class="btn btn--primary" id="hero-primary-cta">
+                  <span>Obtener Acceso Anticipado VIP</span>
+                  <svg style="width: 18px; height: 18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <line x1="5" y1="12" x2="19" y2="12"></line>
+                    <polyline points="12 5 19 12 12 19"></polyline>
+                  </svg>
+                </a>
+                <a href="#beneficios" class="btn btn--ghost" id="hero-secondary-cta">
+                  Conocer el Algoritmo
+                </a>
+              </div>
+
+              <!-- Prueba social preliminar -->
+              <div class="hero__social-proof">
+                <div class="hero__avatars" aria-hidden="true">
+                  <div class="hero__avatar hero__avatar--1">AL</div>
+                  <div class="hero__avatar hero__avatar--2">CR</div>
+                  <div class="hero__avatar hero__avatar--3">MS</div>
+                  <div class="hero__avatar hero__avatar--4">+80</div>
+                </div>
+                <div class="hero__social-text">
+                  <strong>+3,400 adoptantes y 84 refugios</strong> ya están en la lista prioritaria de prelanzamiento.
+                </div>
+              </div>
+            </div>
+
+            <!-- Columna Mockup Visual (Puro CSS sin dependencias externas) -->
+            <div class="hero__mockup-wrapper" aria-label="Simulación visual de la aplicación móvil PetMatch">
+              <!-- Teléfono en CSS puro -->
+              <div class="phone-mockup" role="region" aria-label="Mockup de la interfaz de PetMatch">
+                <div class="phone-mockup__speaker" aria-hidden="true"></div>
+                <div class="phone-mockup__camera" aria-hidden="true"></div>
+                <div class="phone-mockup__screen">
+                  <!-- Barra de estado superior del móvil -->
+                  <div class="phone-ui__status-bar">
+                    <span>09:41</span>
+                    <span aria-hidden="true">● ● ●</span>
+                  </div>
+
+                  <!-- Header de la aplicación móvil -->
+                  <div class="phone-ui__header">
+                    <div class="phone-ui__logo">
+                      <svg style="width: 15px; height: 15px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+                        <circle cx="12" cy="12" r="10"></circle>
+                        <path d="m10 15 5-3-5-3v6Z"></path>
+                      </svg>
+                      <span>PetMatch IA</span>
+                    </div>
+                    <span class="phone-ui__badge-match">98.4% Match</span>
+                  </div>
+
+                  <!-- Tarjeta de Mascota en Pantalla -->
+                  <div class="phone-ui__card">
+                    <!-- Ilustración vectorial y CSS del animal rescatado -->
+                    <div class="phone-ui__pet-visual">
+                      <div class="css-pet" aria-hidden="true">
+                        <div class="css-pet__ear css-pet__ear--left"></div>
+                        <div class="css-pet__ear css-pet__ear--right"></div>
+                        <div class="css-pet__head">
+                          <div class="css-pet__eye css-pet__eye--left"></div>
+                          <div class="css-pet__eye css-pet__eye--right"></div>
+                          <div class="css-pet__snout">
+                            <div class="css-pet__nose"></div>
+                          </div>
+                        </div>
+                      </div>
+                      <span class="phone-ui__pet-badge">Refugio Huellas Seguras</span>
+                    </div>
+
+                    <!-- Datos y Métricas de Compatibilidad -->
+                    <div class="phone-ui__pet-info">
+                      <div class="phone-ui__pet-name">
+                        <span>Milo</span>
+                        <span style="font-size: 11px; color: var(--color-secondary); font-weight: 700;">1.5 años</span>
+                      </div>
+                      <div class="phone-ui__pet-breed">Labrador Mix • Temperamento Calmo</div>
+
+                      <!-- Etiquetas de Afinidad Estilo de Vida -->
+                      <div class="phone-ui__tags">
+                        <span class="phone-ui__tag">Piso c/ Balcón</span>
+                        <span class="phone-ui__tag">Teletrabajo friendly</span>
+                        <span class="phone-ui__tag">Sociable con gatos</span>
+                      </div>
+
+                      <!-- Barra de afinidad algorítmica -->
+                      <div class="phone-ui__score-bar">
+                        <div class="phone-ui__score-fill"></div>
+                      </div>
+                      <div style="display: flex; justify-content: space-between; font-size: 9px; color: var(--color-text-muted);">
+                        <span>Compatibilidad de energía</span>
+                        <strong style="color: var(--color-secondary);">Excelente (98%)</strong>
+                      </div>
+                    </div>
+
+                    <!-- Botones de Interacción Rápida -->
+                    <div class="phone-ui__actions">
+                      <button type="button" class="phone-ui__btn-action phone-ui__btn-action--ghost" aria-label="Ver perfil completo de Milo">Detalles</button>
+                      <button type="button" class="phone-ui__btn-action phone-ui__btn-action--primary" aria-label="Solicitar compatibilidad con Milo">¡Hacer Match!</button>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
+              <!-- Pill Flotante con Métrica IA de Confianza -->
+              <div class="mockup-floater" aria-hidden="true">
+                <div class="mockup-floater__icon">
+                  <svg style="width: 20px; height: 20px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"></path>
+                  </svg>
+                </div>
+                <div>
+                  <div class="mockup-floater__text-top">Algoritmo Predictivo</div>
+                  <div class="mockup-floater__text-value">Cero Devoluciones</div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ------------------------------------------------------------------
+           SECCIÓN BELOW THE FOLD - BENEFICIOS (AIDA: INTERÉS)
+           Estructura requerida: 3 tarjetas Problema → Solución → Resultado
+           Iconos en SVG inline
+           ------------------------------------------------------------------ -->
+      <section class="section benefits" id="beneficios" aria-labelledby="benefits-title">
+        <div class="container">
+          <header class="section__header">
+            <span class="section__badge">Por qué PetMatch transforma el sector</span>
+            <h2 class="section__title" id="benefits-title">
+              Diseñado para resolver el dolor real de la adopción animal
+            </h2>
+            <p class="section__subtitle">
+              Los métodos tradicionales basados solo en fotos generan frustración y abandonos. Nuestra tecnología analiza compatibilidad conductual profunda.
+            </p>
+          </header>
+
+          <div class="benefits__grid">
+            <!-- TARJETA 1: Compatibilidad de Vida -->
+            <article class="benefit-card">
+              <div class="benefit-card__header">
+                <div class="benefit-card__icon-wrapper" aria-hidden="true">
+                  <!-- Inline SVG: Huella y Chip IA -->
+                  <svg class="benefit-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <circle cx="11" cy="4" r="2"></circle>
+                    <circle cx="18" cy="8" r="2"></circle>
+                    <circle cx="4" cy="8" r="2"></circle>
+                    <path d="M12 12c-3 0-5 2-5 4 0 2.5 2.5 4.5 5 4.5s5-2 5-4.5c0-2-2-4-5-4z"></path>
+                  </svg>
+                </div>
+                <h3 class="benefit-card__title">Afinidad Holística de Convivencia</h3>
+              </div>
+
+              <!-- Pipeline: Problema -> Solución -> Resultado -->
+              <div class="benefit-card__pipeline">
+                <div class="pipeline-step pipeline-step--problem">
+                  <div class="pipeline-step__tag">El Problema</div>
+                  <p class="pipeline-step__text">
+                    El <strong>42% de las adopciones fallan</strong> durante los primeros 6 meses por discrepancias imprevistas de energía, espacio o tolerancia al ruido.
+                  </p>
+                </div>
+
+                <div class="pipeline-step pipeline-step--solution">
+                  <div class="pipeline-step__tag">La Solución PetMatch</div>
+                  <p class="pipeline-step__text">
+                    Algoritmo de IA predictivo que evalúa <strong>más de 30 variables comportamentales</strong>: metros cuadrados, tiempo a solas, nivel de actividad y dinámica familiar.
+                  </p>
+                </div>
+
+                <div class="pipeline-step pipeline-step--result">
+                  <div class="pipeline-step__tag">El Resultado</div>
+                  <p class="pipeline-step__text">
+                    Tasa comprobada de <strong>98.4% de adopciones permanentes</strong> y hogares armoniosos desde el día 1.
+                  </p>
+                </div>
+              </div>
+
+              <div class="benefit-card__footer">
+                <div>
+                  <div class="benefit-card__metric">98.4%</div>
+                  <div class="benefit-card__metric-label">Permanencia vitalicia</div>
+                </div>
+                <span class="section__badge">Sin Devoluciones</span>
+              </div>
+            </article>
+
+            <!-- TARJETA 2: Pasaporte de Salud Preventiva -->
+            <article class="benefit-card">
+              <div class="benefit-card__header">
+                <div class="benefit-card__icon-wrapper" aria-hidden="true">
+                  <!-- Inline SVG: Estetoscopio y Corazón Preventivo -->
+                  <svg class="benefit-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M19 14c1.49-1.46 3-3.21 3-5.5A5.5 5.5 0 0 0 16.5 3c-1.76 0-3 .5-4.5 2-1.5-1.5-2.74-2-4.5-2A5.5 5.5 0 0 0 2 8.5c0 2.3 1.5 4.05 3 5.5l7 7Z"></path>
+                    <path d="M12 5v6l3 2"></path>
+                  </svg>
+                </div>
+                <h3 class="benefit-card__title">Pasaporte Médico Preventivo</h3>
+              </div>
+
+              <!-- Pipeline: Problema -> Solución -> Resultado -->
+              <div class="benefit-card__pipeline">
+                <div class="pipeline-step pipeline-step--problem">
+                  <div class="pipeline-step__tag">El Problema</div>
+                  <p class="pipeline-step__text">
+                    Historiales clínicos perdidos en carnets de papel, vacunas olvidadas y gastos veterinarios inesperados que desestabilizan a los nuevos cuidadores.
+                  </p>
+                </div>
+
+                <div class="pipeline-step pipeline-step--solution">
+                  <div class="pipeline-step__tag">La Solución PetMatch</div>
+                  <p class="pipeline-step__text">
+                    <strong>Pasaporte digital biométrico</strong> sincronizado con clínicas veterinarias aliadas, recordatorios automáticos y diagnóstico temprano preventivo.
+                  </p>
+                </div>
+
+                <div class="pipeline-step pipeline-step--result">
+                  <div class="pipeline-step__tag">El Resultado</div>
+                  <p class="pipeline-step__text">
+                    <strong>Ahorro del 35% en emergencias</strong> de salud prevenibles y seguimiento de vacunación 100% al día.
+                  </p>
+                </div>
+              </div>
+
+              <div class="benefit-card__footer">
+                <div>
+                  <div class="benefit-card__metric">-35%</div>
+                  <div class="benefit-card__metric-label">En emergencias médicas</div>
+                </div>
+                <span class="section__badge">Salud Continua</span>
+              </div>
+            </article>
+
+            <!-- TARJETA 3: Ecosistema para Refugios -->
+            <article class="benefit-card">
+              <div class="benefit-card__header">
+                <div class="benefit-card__icon-wrapper" aria-hidden="true">
+                  <!-- Inline SVG: Escudo con Check y Red Colaborativa -->
+                  <svg class="benefit-card__icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+                    <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
+                    <path d="m9 12 2 2 4-4"></path>
+                  </svg>
+                </div>
+                <h3 class="benefit-card__title">Filtro Ético y Respaldo a Refugios</h3>
+              </div>
+
+              <!-- Pipeline: Problema -> Solución -> Resultado -->
+              <div class="benefit-card__pipeline">
+                <div class="pipeline-step pipeline-step--problem">
+                  <div class="pipeline-step__tag">El Problema</div>
+                  <p class="pipeline-step__text">
+                    Los refugios gastan <strong>más de 25 horas semanales</strong> revisando solicitudes manuales y lidiando con adoptantes no comprometidos.
+                  </p>
+                </div>
+
+                <div class="pipeline-step pipeline-step--solution">
+                  <div class="pipeline-step__tag">La Solución PetMatch</div>
+                  <p class="pipeline-step__text">
+                    Panel integral con <strong>pre-scoring ético automático</strong>, verificación de identidad y seguimiento fotográfico seguro posadopción.
+                  </p>
+                </div>
+
+                <div class="pipeline-step pipeline-step--result">
+                  <div class="pipeline-step__tag">El Resultado</div>
+                  <p class="pipeline-step__text">
+                    <strong>60% menos tiempo administrativo</strong>, permitiendo a los rescatistas salvar el doble de vidas cada mes.
+                  </p>
+                </div>
+              </div>
+
+              <div class="benefit-card__footer">
+                <div>
+                  <div class="benefit-card__metric">2.4x</div>
+                  <div class="benefit-card__metric-label">Adopciones procesadas</div>
+                </div>
+                <span class="section__badge">Refugios Verificados</span>
+              </div>
+            </article>
+          </div>
+        </div>
+      </section>
+
+      <!-- ------------------------------------------------------------------
+           SECCIÓN DE DESEO (AIDA: DESEO)
+           Anticipación, escasez ética y beneficios exclusivos del prelanzamiento
+           ------------------------------------------------------------------ -->
+      <section class="section desire" id="deseo" aria-labelledby="desire-title">
+        <div class="container">
+          <div class="desire__grid">
+            <div class="desire__box">
+              <span class="section__badge">Beneficios para Early Adopters</span>
+              <h2 class="section__title" id="desire-title">
+                ¿Por qué registrarte en la lista de prelanzamiento hoy?
+              </h2>
+              <p class="section__subtitle">
+                Los primeros 5,000 miembros tendrán acceso anticipado a la versión Beta y desbloquearán privilegios de por vida dentro de la plataforma.
+              </p>
+
+              <ul class="desire__list" role="list">
+                <li class="desire__item">
+                  <svg class="desire__check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <div>
+                    <strong>Pase Fundador Vitalicio:</strong> Acceso permanente y sin costo a todas las funcionalidades premium de compatibilidad y matchmaking ilimitado.
+                  </div>
+                </li>
+                <li class="desire__item">
+                  <svg class="desire__check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <div>
+                    <strong>6 Meses de Tele-Orientación Veterinaria Gratuita:</strong> Resuelve dudas con médicos colegiados mediante chat 24/7 sin costo adicional.
+                  </div>
+                </li>
+                <li class="desire__item">
+                  <svg class="desire__check-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                    <polyline points="20 6 9 17 4 12"></polyline>
+                  </svg>
+                  <div>
+                    <strong>Acceso Prioritario a Nuevos Rescates:</strong> Conoce a las mascotas antes de su publicación general para encontrar afinidad sin prisas.
+                  </div>
+                </li>
+              </ul>
+            </div>
+
+            <!-- Caja de Estado de la Red -->
+            <div class="desire__box" style="display: flex; flex-direction: column; justify-content: center;">
+              <div style="text-align: center; margin-bottom: 24px;">
+                <div style="font-size: 3.5rem; font-weight: 800; color: var(--color-secondary); line-height: 1;">86%</div>
+                <p style="font-size: 14px; color: var(--color-text-muted); font-weight: 600; margin-top: 6px;">Cupos Fase 1 ya reservados</p>
+              </div>
+
+              <div style="background-color: #EDF2F7; height: 10px; border-radius: var(--radius-pill); overflow: hidden; margin-bottom: 24px;">
+                <div style="width: 86%; height: 100%; background: linear-gradient(90deg, var(--color-secondary), var(--color-primary));"></div>
+              </div>
+
+              <div style="background-color: rgba(46, 217, 166, 0.1); border: 1px dashed var(--color-primary-dark); border-radius: var(--radius-md); padding: 16px; text-align: center;">
+                <p style="font-size: 13px; color: #0A3628; line-height: 1.5;">
+                  ⚡ <strong>Garantía Ética:</strong> Cero venta ni comercialización de animales. PetMatch solo opera con refugios certificados y procesos de adopción verificados bajo la ley de bienestar animal.
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- ------------------------------------------------------------------
+           SECCIÓN DE ACCIÓN (AIDA: ACCIÓN) - FORMULARIO DE CAPTURA DE LEADS
+           Validaciones en tiempo real en JS Vanilla, sin fetch, mensaje DOM
+           ------------------------------------------------------------------ -->
+      <section class="section lead-capture" id="registro" aria-labelledby="form-title">
+        <div class="container">
+          <header class="section__header">
+            <span class="section__badge">Acceso Exclusivo</span>
+            <h2 class="section__title" id="form-title">
+              Reserva tu lugar en la revolución de la adopción animal
+            </h2>
+            <p class="section__subtitle">
+              Únete hoy a la lista de prelanzamiento y sé de los primeros en probar la tecnología que transformará la vida de miles de mascotas.
+            </p>
+          </header>
+
+          <div class="lead-capture__wrapper">
+            <!-- Banner de éxito inyectado/gestionado en DOM -->
+            <div 
+              class="form-lead__success-banner" 
+              id="lead-success-banner" 
+              role="alert" 
+              aria-live="polite"
+            >
+              <!-- Contenido dinámico renderizado por script.js -->
+            </div>
+
+            <!-- Formulario accesible con validaciones -->
+            <form class="form-lead" id="lead-form" novalidate>
+              <!-- Campo: Nombre Completo -->
+              <div class="form-lead__group">
+                <label for="lead-name" class="form-lead__label">
+                  <span>Nombre completo <span class="form-lead__required-indicator" aria-hidden="true">*</span></span>
+                </label>
+                <div class="form-lead__input-wrapper">
+                  <input 
+                    type="text" 
+                    id="lead-name" 
+                    name="name" 
+                    class="form-lead__input" 
+                    placeholder="Ej. Sofía Martínez" 
+                    required 
+                    autocomplete="name"
+                    aria-describedby="error-name"
+                  />
+                </div>
+                <span class="form-lead__error-msg" id="error-name" aria-live="polite"></span>
+              </div>
+
+              <!-- Campo: Correo Electrónico -->
+              <div class="form-lead__group">
+                <label for="lead-email" class="form-lead__label">
+                  <span>Correo electrónico <span class="form-lead__required-indicator" aria-hidden="true">*</span></span>
+                </label>
+                <div class="form-lead__input-wrapper">
+                  <input 
+                    type="email" 
+                    id="lead-email" 
+                    name="email" 
+                    class="form-lead__input" 
+                    placeholder="sofia@ejemplo.com" 
+                    required 
+                    autocomplete="email"
+                    aria-describedby="error-email"
+                  />
+                </div>
+                <span class="form-lead__error-msg" id="error-email" aria-live="polite"></span>
+              </div>
+
+              <!-- Campo: Select Rol / Interés -->
+              <div class="form-lead__group">
+                <label for="lead-role" class="form-lead__label">
+                  <span>¿Cuál es tu rol principal o interés? <span class="form-lead__required-indicator" aria-hidden="true">*</span></span>
+                </label>
+                <div class="form-lead__input-wrapper">
+                  <select 
+                    id="lead-role" 
+                    name="role" 
+                    class="form-lead__select" 
+                    required
+                    aria-describedby="error-role"
+                  >
+                    <option value="" disabled selected>Selecciona una opción...</option>
+                    <option value="adoptante">Quiero adoptar una mascota compatible</option>
+                    <option value="refugio">Soy representante de un Refugio / Fundación</option>
+                    <option value="veterinario">Soy Médico Veterinario / Clínica de salud</option>
+                    <option value="voluntario">Quiero ser hogar de paso o voluntario</option>
+                  </select>
+                </div>
+                <span class="form-lead__error-msg" id="error-role" aria-live="polite"></span>
+              </div>
+
+              <!-- Campo: Checkbox Consentimiento de Datos -->
+              <div class="form-lead__group">
+                <div class="form-lead__checkbox-group">
+                  <input 
+                    type="checkbox" 
+                    id="lead-consent" 
+                    name="consent" 
+                    class="form-lead__checkbox" 
+                    required
+                    aria-describedby="error-consent"
+                  />
+                  <label for="lead-consent" class="form-lead__checkbox-label">
+                    Acepto recibir notificaciones prioritarias del prelanzamiento de PetMatch y confirmo haber leído la <a href="#privacidad" onclick="event.preventDefault();">Política de Privacidad</a> y tratamiento de datos. <span class="form-lead__required-indicator" aria-hidden="true">*</span>
+                  </label>
+                </div>
+                <span class="form-lead__error-msg" id="error-consent" aria-live="polite"></span>
+              </div>
+
+              <!-- Botón de Envío con aria-label -->
+              <button 
+                type="submit" 
+                class="btn btn--primary btn--full" 
+                id="lead-submit-btn" 
+                aria-label="Registrarse en la lista de prelanzamiento de PetMatch"
+              >
+                <span>Reservar mi Pase Fundador VIP</span>
+                <svg style="width: 18px; height: 18px;" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <line x1="5" y1="12" x2="19" y2="12"></line>
+                  <polyline points="12 5 19 12 12 19"></polyline>
+                </svg>
+              </button>
+
+              <!-- Garantía de privacidad y antispam -->
+              <div class="form-lead__guarantee">
+                <svg class="form-lead__guarantee-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect width="18" height="11" x="3" y="11" rx="2" ry="2"></rect>
+                  <path d="M7 11V7a5 5 0 0 1 10 0v4"></path>
+                </svg>
+                <span>Respetamos tu privacidad. Cero spam, cancela tu suscripción en cualquier momento.</span>
+              </div>
+            </form>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ====================================================================
+         FOOTER SEMÁNTICO
+         ==================================================================== -->
+    <footer class="footer" role="contentinfo">
+      <div class="container">
+        <div class="footer__grid">
+          <!-- Columna Marca y Propósito -->
+          <div class="footer__brand-info">
+            <a href="#" class="nav__brand" aria-label="PetMatch Inicio">
+              <svg class="nav__logo-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M10 5.172C10 3.782 8.423 2.679 6.5 3c-2.823.47-4.113 6.006-4 7 .08.707.807 1.545 1.5 1.5 1.5-.1 3.5-1.5 4-2.5.342-.685 1-1.328 1-2.828z"></path>
+                <path d="M14 5.172C14 3.782 15.577 2.679 17.5 3c2.823.47 4.113 6.006 4 7-.08.707-.807 1.545-1.5 1.5-1.5-.1-3.5-1.5-4-2.5-.342-.685-1-1.328-1-2.828z"></path>
+                <path d="M7 14c-1.5 0-3-1-3-3 0-2 1.5-3 3-3s3 1 3 3c0 2-1.5 3-3 3z"></path>
+                <path d="M17 14c-1.5 0-3-1-3-3 0-2 1.5-3 3-3s3 1 3 3c0 2-1.5 3-3 3z"></path>
+                <path d="M12 21c4.5 0 8-3.5 8-8 0-3-2-5-4-5-1.5 0-3 1-4 2.5C11 9 9.5 8 8 8c-2 0-4 2-4 5 0 4.5 3.5 8 8 8z"></path>
+              </svg>
+              <span>Pet<span class="nav__logo-accent">Match</span></span>
+            </a>
+            <p class="footer__desc">
+              Pioneros en matchmaking ético animal mediante inteligencia artificial predictiva. Conectando corazones compatibles para toda la vida.
+            </p>
+          </div>
+
+          <!-- Columna Enlaces -->
+          <div class="footer__links-col">
+            <h4 class="footer__col-title">Navegación</h4>
+            <a href="#beneficios" class="footer__link">Beneficios IA</a>
+            <a href="#deseo" class="footer__link">Pase Fundador</a>
+            <a href="#registro" class="footer__link">Registro VIP</a>
+          </div>
+
+          <!-- Columna Comunidad & Legal -->
+          <div class="footer__links-col">
+            <h4 class="footer__col-title">Compromiso Ético</h4>
+            <a href="#" class="footer__link" onclick="event.preventDefault();">Alianza con Refugios</a>
+            <a href="#" class="footer__link" onclick="event.preventDefault();">Bienestar Animal</a>
+            <a href="#" class="footer__link" onclick="event.preventDefault();">Términos de Privacidad</a>
+          </div>
+        </div>
+
+        <div class="footer__bottom">
+          <p>© 2026 PetMatch Inc. Todos los derechos reservados.</p>
+          <p>Hecho con amor y tecnología para el bienestar animal.</p>
+        </div>
+      </div>
+    </footer>
+
+    <!-- Lógica de interacciones y validaciones en tiempo real -->
+    <script type="module" src="/script.js"></script>
+  </body>
+</html>
+
+

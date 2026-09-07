@@ -1,0 +1,6 @@
+{
+  "name": "PetMatch",
+  "description": "Página de prelanzamiento para PetMatch, app de adopción y bienestar animal impulsada por IA.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
