@@ -1,0 +1,6 @@
+{
+  "name": "DataViz Analytics",
+  "description": "Landing page B2B SaaS de alto impacto para DataViz Analytics con consolidación de métricas de e-commerce y captura de leads.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
